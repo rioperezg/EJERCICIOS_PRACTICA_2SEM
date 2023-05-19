@@ -48,7 +48,11 @@ def bitacora():
         else:
             Cola.arribo_con_prioridad(pedidos, pedido,baja)
         pedido = Pedido()
-        
+        dato = Cola.barrido(pedidos)
+        if dato.prioridad == mayor:
+            Cola.arribo(bitacora, dato)
+        else:
+            pass
 
     
 
