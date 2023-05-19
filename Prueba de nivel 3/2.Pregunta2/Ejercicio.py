@@ -19,3 +19,37 @@ realizar la atención de la cola almacenando los pedidos de mayor prioridad en u
  
 luego de cada atención se podrá agregar un pedido a la cola.
 """
+from Herramientas import Cola
+class Pedido(object):
+    def __init__(self):
+        self.solicitante = input("Nombre del solicitante: ")
+        self.multiverso = input("Nombre del multiverso: ")
+        self.descripcion = input("descripcion")
+def bitacora():
+    pedido = Pedido()
+    pedidos = Cola()
+    bitacora = Cola()
+    mayor = 2
+    media = 1
+    baja = 0
+    while(pedido.solicitante != ""):
+        if (pedido.solicitante == "Gran Conquistador"):
+            Cola.arribo_con_prioridad(pedidos, pedido, mayor)
+        elif(pedido.multiverso == 616):
+            Cola.arribo_con_prioridad(pedidos, pedido, mayor)
+        elif(pedido.descripcion == "El que permanece"):
+            Cola.arribo_con_prioridad(pedidos, pedido, mayor)
+        elif(pedido.solicitante == "Khan que todo lo sabe"):
+            Cola.arribo_con_prioridad(pedidos, pedido, media)
+        elif(pedido.multiverso == 838):
+            Cola.arribo_con_prioridad(pedidos, pedido, media)
+        elif(pedido.descripcion == "Carnicero de Dioses"):
+            Cola.arribo_con_prioridad(pedidos, pedido, media)
+        else:
+            Cola.arribo_con_prioridad(pedidos, pedido,baja)
+        pedido = Pedido()
+        
+
+    
+
+    

@@ -40,6 +40,7 @@ class Cola(object):
         while(not Cola.cola_vacia(caux)):
             dato = Cola.atencion(caux)
             Cola.arribo(cola,dato)
+            return dato
     # Segunda forma barrido, eficiente(n)
     def barrido2(cola):
         i = 0
