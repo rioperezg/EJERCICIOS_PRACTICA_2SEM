@@ -15,8 +15,10 @@ def Crear_cola(elemento):
        Superheroe = input("> ")
     return Cola_s
 
-def Arbol_Superh(cola_Super, cola_misio):
+def Arbol_Superh():
     # Arbol Vacio
+    cola_Super = Crear_cola("Superheroe")
+    cola_misio = Crear_cola("Mision")
     raiz = None
     while(not Cola.cola_vacia(cola_misio)):
         Superheroe = Cola.atencion(cola_Super)
@@ -34,6 +36,7 @@ def Arbol_Superh(cola_Super, cola_misio):
         elif(respuesta == "no"):
             Superheroe > raiz.info
             nodoArbol.insertar_nodo(raiz, Superheroe)
+print(Arbol_Superh())
         
            
 
