@@ -11,10 +11,10 @@ class Cola(object):
         if cola.frente is None:
             cola.frente = nodo
         else:
-            cola.final.sig = nodo
+            cola.final = nodo
         cola.final = nodo
         cola.tamaño += 1
-    def atencion(cola, dato):
+    def atencion(cola):
         dato = cola.frente.info
         cola.frente = cola.frente.sig
         if cola.frente is None:
