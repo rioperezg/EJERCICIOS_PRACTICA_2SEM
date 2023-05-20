@@ -8,7 +8,7 @@ respectivamente en el orden alfabético;
  
 descomprimir los siguientes mensajes –cuyo árbol ha sido construido de la misma manera que el ejemplo visto anteriormente:
 """
-from Herramientas import nodoArbol, nodoArbolHuffman
+from Herramientas import nodoArbol, nodoArbolHuffman, Lista, nodoLista
 # Primero hemos de calcular las frecuencias, hagamoslo generico por supuesto, Haremos una clase con objeto carater, y atributos cantidad 
 # y Frecuencia, Podemos hacerlo con input
 class Caracter(object):
@@ -18,12 +18,13 @@ class Caracter(object):
         self.cantidad = input("Cantidad: ")
         self.frecuencia = self.cantidad / size
 raiz = None
-lista = []
+lista_de_nums = Lista()
 letra = Caracter()
 while(letra.string != ""):
     Letra = nodoArbolHuffman(info=letra.string, valor=letra.frecuencia)
     # Hay q almacenar primeramente los caracteres en una lista segun peso y orden alfabetico
-    lista.append(Letra)
+    Lista.insertar(lista_de_nums, Letra.info, campo=Letra.valor)
+print(lista_de_nums)
 
 
 
