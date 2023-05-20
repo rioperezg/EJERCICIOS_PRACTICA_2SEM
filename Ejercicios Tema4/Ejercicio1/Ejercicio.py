@@ -13,9 +13,9 @@ from Herramientas import nodoArbol, nodoArbolHuffman, Lista, nodoLista
 # y Frecuencia, Podemos hacerlo con input
 class Caracter(object):
     def __init__(self):
-        size = input("Cuantas letras tiene la tabla en total?: ")
+        size = int(input("Cuantas letras tiene la tabla en total?: "))
         self.string = input("Caracter: ")
-        self.cantidad = input("Cantidad: ")
+        self.cantidad = int(input("Cantidad: "))
         self.frecuencia = self.cantidad / size
 raiz = None
 lista_de_nums = Lista()
@@ -24,7 +24,8 @@ while(letra.string != ""):
     Letra = nodoArbolHuffman(info=letra.string, valor=letra.frecuencia)
     # Hay q almacenar primeramente los caracteres en una lista segun peso y orden alfabetico
     Lista.insertar(lista_de_nums, Letra.info, campo=Letra.valor)
-print(lista_de_nums)
+    letra = Caracter()
+Lista.barrido(lista_de_nums)
 
 
 
