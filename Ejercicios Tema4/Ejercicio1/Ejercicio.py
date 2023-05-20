@@ -23,13 +23,12 @@ letra = Caracter()
 while(letra.string != ""):
     Letra = nodoArbolHuffman(info=letra.string, valor=letra.frecuencia)
     # Hay q almacenar primeramente los caracteres en una lista segun peso y orden alfabetico
-    Cola.arribo_con_prioridad(lista_de_nums, Letra, prioridad=Letra.valor)
+    Lista.insertar(lista_de_nums, Letra, prioridad=Letra.valor)
     letra = Caracter()
 
 
+Lista.barrido(lista_de_nums)
 
-
-Cola.barrido2(lista_de_nums)
 
 
 
