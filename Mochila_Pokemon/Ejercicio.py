@@ -5,16 +5,17 @@ pasado este periodo, el Pokemon desaparecer´a para siempre. Teniendo en cuenta 
 tienes que decidir cuales Pokemon capturar y cuando hacerlo para maximizar el valor total.
 """
 # importamos las librerías necesarias 
-import pandas
-
-"""
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-file_path = "sic-avisos_recepcionados_2023.csv"
+import chardet
+from matplotlib.pyplot import rcParams
+
+file_path = "Mochila_Pokemon\pokemon.csv"
 with open(file_path, "rb") as f:
     result = chardet.detect(f.read())
 
 # Leer el archivo CSV utilizando la codificación detectada
-df_avisos = pd.read_csv(file_path, encoding=result["encoding"], on_bad_lines="skip")
-"""
+df_Pokemon = pd.read_csv(file_path, encoding=result["encoding"], on_bad_lines="skip")
+
