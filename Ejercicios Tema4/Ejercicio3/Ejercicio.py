@@ -32,7 +32,7 @@ class Tipo_vert(object):
             self.tipo = "estacion"
         elif tipo == "desvio":
             self.tipo = "desvio"
-red_ferro = Grafo()
+red_ferro = Grafo(False)
 estacion = nodoVertice(info=input("Ingrese el nombre de la estacion a cargar: "))
 i = 0
 while (i < 6):
