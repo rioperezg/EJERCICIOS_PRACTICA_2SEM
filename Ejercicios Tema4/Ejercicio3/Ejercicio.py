@@ -50,5 +50,5 @@ while (i < 12):
 
 Tamaño = Arista.tamaño(red_ferro)
 while(Tamaño > 0):
-    
+
 
