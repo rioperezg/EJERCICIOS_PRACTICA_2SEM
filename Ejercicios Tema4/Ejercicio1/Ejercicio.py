@@ -26,6 +26,32 @@ while(letra.string != ""):
     Lista.insertar(lista_de_nums, Letra.info, campo = Letra.valor)
     letra = Caracter()
 
+
+
+# Estas dos funciones las necesitaremos seguro
+def generar_tabla(nodo, tabla, codigo=""):
+    if nodo is not None:
+        if nodo.izquierdo is None and nodo.derecho is None:
+            tabla[nodo.caracter] = codigo
+        else:
+            generar_tabla(nodo.izquierdo, tabla, codigo + "0")
+            generar_tabla(nodo.derecho, tabla, codigo + "1")
+ 
+def decodificar(cadena, arbol_huff):
+    cadena_deco = ''
+    raiz_aux = arbol_huff
+    pos = 0
+    while(pos < len(cadena)):
+        if(cadena[pos] == '0'):
+            raiz_aux = raiz_aux.izquierdo
+        else:
+            raiz_aux = raiz_aux.derecho
+        pos += 1
+        if(raiz_aux.izquierdo is None):
+            cadena_deco += raiz_aux.caracter
+            raiz_aux = arbol_huff
+    return cadena_deco
+
 Lista.barrido(lista_de_nums)
 
 
