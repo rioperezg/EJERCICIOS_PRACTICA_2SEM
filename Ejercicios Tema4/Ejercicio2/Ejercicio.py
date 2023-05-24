@@ -45,21 +45,23 @@ class Mision(object):
         self.tipo = input("(Presione enter si quiere salir) Tipo de misión: ")
         self.Planeta = input("(Presione enter si quiere salir) Planeta de destino: ")
         self.general = input("(Presione enter si quiere salir) General que solicita la msiion: ")
-    def recursos(self, mision):
-        if (mision.prioridad == prioridad_alta):
+
+class recursos(object):
+    def __init__(self, mision):    
+        if (mision == "Palpatine" or "Darth Vader"):
             print("los recursos se introduciran manualmente")
             self.stormtroopers = int(input("stormtroopers > "))
             self.vehiculos = input("vehiculos > ")
         else: 
             print("los recursos se asignara de forma automatica")
-            if (mision.tipo == "exploracion"):
+            if (mision == "exploracion"):
                 self.stormtroopers = 15
                 self.vehiculos = "2 speeder bikes"
-            elif(mision.tipo == "contencion"):
+            elif(mision == "contencion"):
                 self.stormtroopers = 30
                 # Ahora de forma aleatoria de la lista de vehiculos se eligen 3
                 self.vehiculos = random.sample(list_vehic, 3)
-            elif(mision.tipo == "ataque"):
+            elif(mision == "ataque"):
                 self.stormtroopers = 50
                 self.vehiculos = random.sample(list_vehic2, 7)
 i = 0
@@ -67,22 +69,32 @@ prioridad_alta = 1
 prioridad_baja = 0
 mision = Mision()
 misiones = Cola()
+# Tambien haremos un arribo con prioridad manualmente
 while(mision.tipo != "" or mision.Planeta != "" or mision.general != ""):
-    if (mision.general == "Palpatine" or "Darth Vader"):
-        Cola.arribo_con_prioridad(misiones, mision, prioridad=prioridad_alta)
+    # Directamente las misiones que no cumplan se moveran al final
+    if(mision.general == "Palpatine" or "Darth Vader"):
+        Cola.arribo(misiones, mision.general)
         i += 1
-    else: 
-        Cola.arribo_con_prioridad(misiones, mision, prioridad_baja)
+        mision = Mision()
+    else:
+        Cola.mover_al_final(misiones, mision.tipo)
         i += 1
-    mision = Mision()
+        mision = Mision()
+
+
+    # Realizaremos un barrido manual nostros mismos
 while(i != 0): 
-    dato = Cola.barrido(misiones)
-    if dato.prioridad == prioridad_alta:
-        print("los recursos se introduciran manualmente")
-        stormtroopers = input("stormtroopers > ")
-        vehiculos = input("vehiculos > ")
+    dato = Cola.atencion(misiones)
+    print(dato.info)
+    recursos(mision=dato)
+    # Directamente las misiones que no cumplan se moveran al final
+    if(dato == "Palpatine" or "Darth Vader"):
+        Cola.arribo(misiones, dato)
         i -= 1
     else:
-        Mision.recursos(dato)
+        Cola.mover_al_final(misiones, dato)
         i -= 1
+
+
+
 
