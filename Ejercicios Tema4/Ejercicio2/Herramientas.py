@@ -14,12 +14,12 @@ class Cola(object):
         cola.final = nodo
         cola.tamaño += 1
     def atencion(cola):
-        aux = cola.datos[cola.frente]
-        cola.frente += 1
-        if(cola.frente==len(cola.datos)):
-            cola.frente = 0
-        cola.tamanio -= 1
-        return aux
+        dato = cola.frente.info
+        cola.frente = cola.frente.sig
+        if cola.frente is not None:
+            cola.final = None
+            cola.tamaño -= 1
+            return dato
     def cola_vacia(cola):
         return cola.frente is None
     def en_frente(cola):
