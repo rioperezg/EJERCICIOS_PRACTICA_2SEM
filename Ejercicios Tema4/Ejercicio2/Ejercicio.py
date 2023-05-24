@@ -25,7 +25,7 @@ indicar la cantidad total de recursos asignados a las misiones.
 from Herramientas import Cola, Lista, nodoLista  
 # Necesitaremos una funcion que nos devuelva un vehiciulo aleatorio de una lista de vehiculos predefinida
 import random
-
+"""
 lista_vehiculos = Lista()
 
 def Lista_vehiculos(vehiculos):
@@ -37,8 +37,9 @@ def Lista_vehiculos(vehiculos):
         vehiculos.pop(vehiculo)
         Lista.insertar(lista_vehiculos, vehiculo)
         return Lista_vehiculos(vehiculos)
-list_vehic = Lista_vehiculos(["AT-AT", "AT-RT", "AT-TE", "AT-DP", "AT-ST"])
-list_vehic2 = Lista_vehiculos(["AT-AT", "AT-RT", "AT-TE", "AT-DP", "AT-ST", "AT-M6", "AT-MP", "AT-DT"])
+"""
+list_vehic = ["AT-AT", "AT-RT", "AT-TE", "AT-DP", "AT-ST"]
+list_vehic2 = ["AT-AT", "AT-RT", "AT-TE", "AT-DP", "AT-ST", "AT-M6", "AT-MP", "AT-DT"]
 class Mision(object):
     def __init__(self):
         self.tipo = input("(Presione enter si quiere salir) Tipo de misión: ")
